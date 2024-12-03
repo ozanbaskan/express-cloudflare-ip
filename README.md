@@ -2,6 +2,9 @@
 
 ### Middleware to get client ip for connections through cloudflare reverse proxy.
 
+[![NPM version](https://badge.fury.io/js/%40ozanbaskan%2Fexpress-cloudflare-ip.svg)](https://www.npmjs.com/package/@ozanbaskan/express-cloudflare-ip)
+
+
 #### Usage
 
 ```javascript
