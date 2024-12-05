@@ -39,9 +39,6 @@ const sanitizeIfIpV4 = (ip: any): string => {
 };
 
 const extractRequestIp = (req: Request): string => {
-  const internalIp = req.header("x-internal-ip");
-  if (internalIp) return internalIp;
-
   return req.ip as string;
 };
 
@@ -84,6 +81,8 @@ export const expressCloudflareIp = (opts?: ExpressCloudflareIpOptions) => {
   return (req: Request, _res: Response, next: NextFunction) => {
     const ip = extractRequestIp(req);
     const reqIp = sanitizeIfIpV4(ip);
+    if (!reqIp) return next();
+
     const ipFromCloudflare = req.header(fullOpts.cloudflareHeader) as string;
     const ipFamily = net.isIP(reqIp);
 

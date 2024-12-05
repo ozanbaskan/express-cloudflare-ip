@@ -1,8 +1,12 @@
 {
   "name": "express-cloudflare-ip",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tool to extract real ip for cloudflare reverse proxy",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc"
   },
